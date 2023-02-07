@@ -1,10 +1,9 @@
 from quadrado import Quadrado
-from circulo import Circulo
 
 class QuadradoParaCirculo:
-    def __init__(self) -> None:
-        pass
-    
-    def calcular_area(forma):
-        return forma.calcular_area()
+    def __init__(self, quadrado: Quadrado) -> None:
+        self.quadrado = quadrado
 
+    def calcular_area(self) -> float:
+        raio = self.quadrado.lado
+        return 3.14 * (raio ** 2)

@@ -1,9 +1,9 @@
 from quadrado import Quadrado
-from circulo import Circulo
 from quadrado_para_circulo import QuadradoParaCirculo
 
+def calcular_area(forma):
+    qpc = QuadradoParaCirculo(forma)
+    return qpc.calcular_area()
 
 quadrado = Quadrado(10)
-circulo = Circulo(3)
-qpc = QuadradoParaCirculo()
-print(f"Resultado do calculo do Quadrado: {qpc.calcular_area(quadrado)}")
+print(f"Resultado do calculo do Quadrado: {calcular_area(quadrado)}")
