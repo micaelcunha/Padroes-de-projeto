@@ -4,4 +4,4 @@ from creature import Creature
 
 class PermanentDamageCardGame(CardGame):
     def hit(self, attacker: Creature, defender: Creature):
-
+        defender.health -= attacker.attack

@@ -3,3 +3,6 @@ class Creature:
         self.name = name
         self.health = health
         self.attack = attack
+
+    def status(self) -> str:
+        print(f"Name: {self.name}, Attack: {self.attack}, Health: {self.health}")
