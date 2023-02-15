@@ -8,14 +8,17 @@ class MagicSquareGenerator:
         generator = Generator()
         splitter = Splitter()
         verifier = Verifier()
-
+        
         while True:
-            square = []
+            matriz = []
             for i in range(size):
-                square.append(generator.generate(size))
-            s = splitter.split(square)
-            verifier.verify(s)
+                matriz.append(generator.generate(size))
+            
+            square = splitter.split(matriz)
+            cubo_magico: bool = verifier.verify(square)
 
             # Código aqui...
-        
-            return square
+            if cubo_magico:
+                return matriz
+            else:
+                print(matriz)
