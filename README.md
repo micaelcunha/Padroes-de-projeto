@@ -2,8 +2,8 @@
 
 grupo:
 
-Micael Cunha,
-Silas Matos,
-João Neri,
-Jean Freitas,
+Micael Cunha https://github.com/micaelCunha ,
+Silas Matos github.com/silasMatos ,
+João Neri https://github.com/JoaoHneri ,
+Jean Freitas https://github.com/Jeanziin ,
 John Maciel,
