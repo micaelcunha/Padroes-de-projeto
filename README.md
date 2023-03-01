@@ -3,7 +3,7 @@
 grupo:
 
 Micael Cunha https://github.com/micaelCunha ,
-Silas Matos github.com/silasMatos ,
+Silas Matos https://github.com/silasMatos ,
 João Neri https://github.com/JoaoHneri ,
 Jean Freitas https://github.com/Jeanziin ,
 John Maciel,
