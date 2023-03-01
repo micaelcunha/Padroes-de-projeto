@@ -2,8 +2,8 @@
 
 grupo:
 
-Micael Cunha
-Silas Matos
-João Neri
-Jean Freitas
-John Maciel
+Micael Cunha,
+Silas Matos,
+João Neri,
+Jean Freitas,
+John Maciel,
