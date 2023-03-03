@@ -6,13 +6,16 @@ class ChatRoom:
         self.peoples: list[Person] = []
 
     def join(self, person: Person):
+        self.broadcast("room",  f"{person.name} joins the chat")
+        person.chat_room = self
         self.peoples.append(person)
-        self.broadcast(person.name,  f"{person.name} joins the chat")
 
     def broadcast(self, source: str, message: str) -> None:
         for person in self.peoples:
-            if person.name == source:
-                person.receive("room", message)
+            if person.name != source:
+                person.receive(source, message)
 
     def message(self, source, destination: str, message: str) -> None:
-        pass
+        for person in self.peoples:
+            if person.name == destination:
+                person.receive(source, message)
