@@ -1,0 +1,2 @@
+class Wheel:
+    size = None

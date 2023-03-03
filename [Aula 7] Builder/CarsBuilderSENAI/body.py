@@ -1,0 +1,2 @@
+class Body:
+    shape = None
