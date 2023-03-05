@@ -6,3 +6,5 @@ class Command:
         self.action = action
         self.amount = amount
         self.success = False
+
+    
