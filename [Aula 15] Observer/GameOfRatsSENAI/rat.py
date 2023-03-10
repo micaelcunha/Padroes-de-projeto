@@ -18,17 +18,20 @@ class Rat:
             print("Um rato entrou no game")
         else:
             print(f"rat_enters --- {self.name} não é igual {which_rat.name}")
+            print("entrou um novo rato no game")
+            which_rat.attack = self.attack + 1
             self.game.notify_rat(which_rat)
 
     def notify_rat(self, which_rat):
         if self == which_rat:
             print(f"--- notify_rat --- {self.name} é igual {which_rat.name}")
-            which_rat.attack += 1
-            print(f"{which_rat.name}: attack +1")
+            #which_rat.attack += 1
+            #print(f"{which_rat.name}: attack +1")
         else:
             print(f"--- notify_rat --- {self.name} não é igual {which_rat.name}")
-            self.attack += 1
-            print(f"{self.name}: attack +1")
+            self.attack = which_rat.attack
+            return
+            #print(f"{self.name}: attack +1")
         
         
         
