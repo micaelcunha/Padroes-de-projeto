@@ -1,51 +1,67 @@
 from game import Game
-from observer import Observer
 
 
 class Rat:
-    #def __init__(self, game: Game):
-        #self.game = game
-        #self.attack: int = 1
-        #game.rat_enters.append(self.rat_enters)
-        #game.notify_rat.append(self.notify_rat)
+    def __init__(self, game: Game, name):
+        self.name = name
+        self.game = game
+        self.attack: int = 1
+        print(f"instanciei o {self.name}")
+        game.rat_enters.append(self.rat_enters)
+        game.notify_rat.append(self.notify_rat)
 
-        #self.game.rat_enters(self)
+        self.game.rat_enters(self)
 
-    
-        
-        
-        
     def rat_enters(self, which_rat):
-        print("entrou um rato")
-        self.notify_rat(which_rat)
-        self.game.rat_enters.remove(self.rat_enters)
+        if self == which_rat:
+            print(f"rat_enters --- {self.name} é igual {which_rat.name}")
+            print("Um rato entrou no game")
+        else:
+            print(f"rat_enters --- {self.name} não é igual {which_rat.name}")
+            self.game.notify_rat(which_rat)
 
     def notify_rat(self, which_rat):
-        which_rat.attack = self.rat_enters
-        self.game.notify_rat.remove(self.notify_rat)
-
-
-
-
-
-
-
-
-
-    def __init__(self, observer: Observer) -> None:
-        self.observer = observer
-        self.attack: int = 1
-        self.adicionar_rato()
-
-
-
-    def adicionar_rato(self):
-        self.observer.rats_observers.append(self)
-        print("um rato entrou")
-        self.observer.rats_notify.append(self)
-        self.notificar()
-
-    def notificar(self):
-        for rat in self.observer.rats_notify:
-            rat.attack = len(self.observer.rats_observers)
+        if self == which_rat:
+            print(f"--- notify_rat --- {self.name} é igual {which_rat.name}")
+            which_rat.attack += 1
+            print(f"{which_rat.name}: attack +1")
+        else:
+            print(f"--- notify_rat --- {self.name} não é igual {which_rat.name}")
+            self.attack += 1
+            print(f"{self.name}: attack +1")
         
+        
+        
+    #def rat_enters(self, which_rat):
+     #   print("entrou um rato")
+      #  self.notify_rat(which_rat)
+       # self.game.rat_enters.remove(self.rat_enters)
+
+    #def notify_rat(self, which_rat):
+     #   which_rat.attack
+      #  self.game.notify_rat.remove(self.notify_rat)
+
+
+
+
+
+
+
+
+
+    #def __init__(self, observer: Observer) -> None:
+        #self.observer = observer
+        #self.attack: int = 1
+        #self.adicionar_rato()
+
+
+
+    #def adicionar_rato(self):
+     #   self.observer.rats_observers.append(self)
+      #  print("um rato entrou")
+       # self.notificar()
+        #self.observer.rats_notify.append(self)
+
+    #def notificar(self):
+     #   for rat in self.observer.rats_notify:
+      #      rat.attack += 1

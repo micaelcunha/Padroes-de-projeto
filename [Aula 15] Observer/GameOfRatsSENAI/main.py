@@ -1,29 +1,34 @@
-from observer import Observer
 from game import Game
 from rat import Rat
 
 
 def test_single_rat():
     game = Game()
-    observer = Observer()
-    rat = Rat(observer)
+    rat = Rat(game, "rato1")
     print(f"rat 1: {rat.attack} should equal 1.")
 
 
 def test_two_rats():
     game = Game()
-    observer = Observer()
-    rat = Rat(observer)
-    rat2 = Rat(observer)
+    rat = Rat(game, "rato1")
+    rat2 = Rat(game, "rato2")
 
     print(f"rat 1: {rat.attack} should equal 2.")
     print(f"rat 2: {rat2.attack} should equal 2.")
-    
-    rat3 = Rat(observer)
 
+def test_three_rats():
+    game = Game()
+    rat = Rat(game, "rato1")
+    rat2 = Rat(game, "rato2")
+    rat3 = Rat(game, "rato3")
+
+    print(f"rat 1: {rat.attack} should equal 3.")
+    print(f"rat 2: {rat2.attack} should equal 3.")
     print(f"rat 3: {rat3.attack} should equal 3.")
 
 
 test_single_rat()
 print("\n")
 test_two_rats()
+print("\n")
+test_three_rats()
